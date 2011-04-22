@@ -1,0 +1,41 @@
+plugin.tx_odsfacebook_pi1 {
+	date_format = r
+	template = EXT:ods_facebook/pi1/ods_facebook.html
+
+	marker {
+		text = TEXT
+		text.field = text
+
+		date = TEXT
+		date.field = date
+
+		author = TEXT
+		author.field = author
+
+		image = TEXT
+		image {
+			field = image
+			innerWrap = <img src="|" />
+			typolink.parameter.field = link
+			if.isTrue.field = image
+		}
+
+		name = TEXT
+		name {
+			field = name
+			wrap = <h3>|</h3>
+			typolink.parameter.field = link
+			if.isTrue.field = name
+		}
+
+		caption = TEXT
+		caption {
+			field = caption
+			wrap = |<br />
+			if.isTrue.field = caption
+		}
+
+		description = TEXT
+		description.field = description
+	}
+}
